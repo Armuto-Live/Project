@@ -1,0 +1,30 @@
+{
+  "name": "comprobantePago",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "idPedido": {
+      "type": "string",
+      "required": true
+    },
+    "idProducto": {
+      "type": "string",
+      "required": true
+    },
+    "idCliente": {
+      "type": "string",
+      "required": true
+    },
+    "fechaComprobante": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

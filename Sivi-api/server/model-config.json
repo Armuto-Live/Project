@@ -38,5 +38,21 @@
   "Cliente": {
     "dataSource": "db",
     "public": true
+  },
+  "Producto": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Promocion": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Pedido": {
+    "dataSource": "db",
+    "public": true
+  },
+  "comprobantePago": {
+    "dataSource": "db",
+    "public": true
   }
 }

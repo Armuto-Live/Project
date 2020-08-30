@@ -1,0 +1,26 @@
+{
+  "name": "Promocion",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "descripcionPromocion": {
+      "type": "string",
+      "required": true
+    },
+    "fechaInicio": {
+      "type": "date",
+      "required": true
+    },
+    "fechaCaducidad": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
