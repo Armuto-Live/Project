@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-class MeetupItem extends Component{
+class ClienteItem extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -12,10 +12,10 @@ class MeetupItem extends Component{
   render(){
     return (
       <li className="collection-item">
-        <Link to={`/meetups/${this.state.item.id}`}>{this.state.item.name}</Link>
+        <Link to={`/clientes/${this.state.item.id}`}>{this.state.item.nombreCliente}</Link>
       </li>
     )
   }
 }
 
-export default MeetupItem;
+export default ClienteItem;
