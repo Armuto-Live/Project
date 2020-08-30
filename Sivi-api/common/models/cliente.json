@@ -6,10 +6,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "idCliente": {
-      "type": "string",
-      "required": true
-    },
     "nombreCliente": {
       "type": "string",
       "required": true
