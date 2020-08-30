@@ -1,0 +1,42 @@
+{
+  "name": "Cliente",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "idCliente": {
+      "type": "string",
+      "required": true
+    },
+    "nombreCliente": {
+      "type": "string",
+      "required": true
+    },
+    "apellidoCliente": {
+      "type": "string",
+      "required": true
+    },
+    "telefonoCliente": {
+      "type": "number",
+      "required": true
+    },
+    "direccionCliente": {
+      "type": "string",
+      "required": true
+    },
+    "dniCliente": {
+      "type": "number",
+      "required": true
+    },
+    "referenciaCliente": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
