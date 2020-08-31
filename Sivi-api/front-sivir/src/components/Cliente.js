@@ -13,7 +13,7 @@ class Client extends Component{
   componentWillMount(){
     this.getClientes();
   }
-
+  
   getClientes(){
     axios.get('http://localhost:3000/api/Clientes')
       .then(response => {

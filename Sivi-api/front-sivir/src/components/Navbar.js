@@ -16,7 +16,7 @@ class Navbar extends Component{
             </ul>
             <ul className="side-nav" id="main-menu">
             <li><Link to="/"><i className="fa fa-plus"></i>CLIENTE</Link></li>  
-            <li><Link to="/meetups/add"><i className="fa fa-plus"></i>PEDIDO(ADD MEETUP)</Link></li>  
+            <li><Link to="/cliente/add"><i className="fa fa-plus"></i>PEDIDO(ADD MEETUP)</Link></li>  
             <li><Link to="/meetups/add"><i className="fa fa-plus"></i> PRODUCTO(ADD MEETUP)</Link></li>
             <li><Link to="/about"><i className="fa fa-plus"></i> PROMOCION(ABOUT)</Link></li> 
             </ul>

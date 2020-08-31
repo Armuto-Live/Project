@@ -12,7 +12,7 @@ class ClienteItem extends Component{
   render(){
     return (
       <li className="collection-item">
-        <Link to={`/clientes/${this.state.item.id}`}>{this.state.item.nombreCliente}</Link>
+        <Link to={`/cliente/${this.state.item.id}`}>{this.state.item.apellidoCliente} {this.state.item.nombreCliente}</Link>
       </li>
     )
   }
