@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Cliente from './Cliente';
+import Cliente from './Clientes/Cliente';
 import About from './About';
-import ClienteDetails from './ClienteDetails';
-import AddCliente from './AddCliente';
-import EditCliente from './EditCliente';
+import ClienteDetails from './Clientes/ClienteDetails';
+import AddCliente from './Clientes/AddCliente';
+import EditCliente from './Clientes/EditCliente';
 
 const Main = () => (
   <main>
