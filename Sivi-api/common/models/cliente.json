@@ -15,7 +15,7 @@
       "required": true
     },
     "telefonoCliente": {
-      "type": "string",
+      "type": "number",
       "required": true
     },
     "direccionCliente": {
@@ -23,7 +23,7 @@
       "required": true
     },
     "dniCliente": {
-      "type": "string",
+      "type": "number",
       "required": true
     },
     "referenciaCliente": {

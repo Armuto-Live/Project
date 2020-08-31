@@ -17,12 +17,12 @@ class AddCliente extends Component{
   onSubmit(e){
     console.log(this.refs.nombre.value);
     const newCliente = {
-      nombre: this.refs.nombre.value,
-      apellido: this.refs.apellido.value,
-      telefono: this.refs.telefono.value,
-      direccion: this.refs.direccion.value,
-      dni: this.refs.dni.value,
-      referencia: this.refs.referencia.value
+      nombreCliente: this.refs.nombre.value,
+      apellidoCliente: this.refs.apellido.value,
+      telefonoCliente: this.refs.telefono.value,
+      direccionCliente: this.refs.direccion.value,
+      dniCliente: this.refs.dni.value,
+      referenciaCliente: this.refs.referencia.value
       
     }
     this.addCliente(newCliente);
@@ -45,7 +45,7 @@ class AddCliente extends Component{
             <label htmlFor="apellido">Apellidos</label>
           </div>
           <div className="input-field">
-            <input type="text" name="telefono" ref="telefono" />
+            <input type="number" name="telefono" ref="telefono" />
             <label htmlFor="telefono">Telefono</label>
           </div>
           <div className="input-field">
@@ -53,7 +53,7 @@ class AddCliente extends Component{
             <label htmlFor="direccion">Direccion</label>
           </div>
           <div className="input-field">
-            <input type="text" name="dni" ref="dni" />
+            <input type="number" name="dni" ref="dni" />
             <label htmlFor="dni">DNI</label>
           </div>
           <div className="input-field">
