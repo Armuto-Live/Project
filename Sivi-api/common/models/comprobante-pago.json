@@ -6,15 +6,31 @@
     "validateUpsert": true
   },
   "properties": {
-    "idPedido": {
+    "totalComprobante": {
+      "type": "number",
+      "required": true
+    },
+    "direccionComprobante": {
       "type": "string",
       "required": true
     },
-    "idProducto": {
+    "referenciaComprobante": {
       "type": "string",
       "required": true
     },
-    "idCliente": {
+    "clienteComprobante": {
+      "type": "string",
+      "required": true
+    },
+    "telefonoComprobante": {
+      "type": "number",
+      "required": true
+    },
+    "productoComprobante": {
+      "type": "string",
+      "required": true
+    },
+    "tamañoComprobante": {
       "type": "string",
       "required": true
     },
