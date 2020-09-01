@@ -10,6 +10,10 @@
       "type": "string",
       "required": true
     },
+    "tamañoProducto": {
+      "type": "string",
+      "required": true
+    },
     "descripcionProducto": {
       "type": "string",
       "required": true

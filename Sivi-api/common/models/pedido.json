@@ -6,6 +6,10 @@
     "validateUpsert": true
   },
   "properties": {
+    "fechaPedido": {
+      "type": "date",
+      "required": true
+    },
     "productoPedido": {
       "type": "string",
       "required": true

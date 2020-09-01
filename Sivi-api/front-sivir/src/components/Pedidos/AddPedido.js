@@ -16,6 +16,7 @@ class AddPedido extends Component{
 
   onSubmit(e){
     const newPedido = {
+      fechaPedido:this.refs.fecha.value,
       productoPedido: this.refs.producto.value,
       telefonoPedido: this.refs.telefono.value,
       direccionPedido: this.refs.direccion.value,
@@ -38,6 +39,10 @@ class AddPedido extends Component{
           <div className="input-field">
             <input type="text" name="cliente" ref="cliente" />
             <label htmlFor="cliente">Cliente</label>
+          </div>
+          <div className="input-field">
+            <strong>Fecha:</strong>
+            <input type="date" name="fecha" ref="fecha" />
           </div>
           <div className="input-field">
             <input type="text" name="direccion" ref="direccion" />

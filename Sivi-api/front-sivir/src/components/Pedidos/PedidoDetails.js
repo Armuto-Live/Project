@@ -40,6 +40,7 @@ class PedidoDetails extends Component{
        <Link className="btn grey" to="/pedido">Back</Link>
        <h1>{this.state.details.clientePedido}</h1>
        <ul className="collection">
+        <li className="collection-item">Fecha: {this.state.details.fechaPedido}</li>
         <li className="collection-item">Direccion: {this.state.details.direccionPedido}</li>
         <li className="collection-item">Referencia: {this.state.details.referenciaPedido}</li>
         <li className="collection-item">Telefono: {this.state.details.telefonoPedido}</li>

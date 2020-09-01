@@ -7,7 +7,8 @@ class EditPedido extends Component{
     super(props);
     this.state = {
     id: '',
-    productoPedido: '',
+      fechaPedido: '',
+      productoPedido: '',
       telefonoPedido: '',
       direccionPedido:'',
       clientePedido: '',
@@ -29,6 +30,7 @@ class EditPedido extends Component{
     .then(response => {
       this.setState({
         id: response.data.id,
+        fechaPedido: response.data.fechaPedido,
         productoPedido: response.data.productoPedido,
         telefonoPedido: response.data.telefonoPedido,
         direccionPedido: response.data.direccionPedido,
@@ -56,6 +58,7 @@ class EditPedido extends Component{
 
   onSubmit(e){
     const newPedido = {
+      fechaPedido: this.refs.fecha.value,
       productoPedido: this.refs.producto.value,
       telefonoPedido: this.refs.telefono.value,
       direccionPedido: this.refs.direccion.value,
@@ -75,6 +78,10 @@ class EditPedido extends Component{
        <Link className="btn grey" to="/pedido">Back</Link>
        <h1>Editar Pedido</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
+       <div className="input-field">
+            <strong>Fecha: {this.state.fechaPedido}</strong>
+            <input type="date" name="fecha" ref="fecha" />
+          </div>
           <div className="input-field">
             <input type="text" name="cliente" ref="cliente" />
             <label htmlFor="cliente">Cliente: {this.state.clientePedido}</label>

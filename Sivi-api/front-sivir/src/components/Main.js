@@ -17,10 +17,17 @@ import AddPedido from './Pedidos/AddPedido';
 import EditPedido from './Pedidos/EditPedido';
 
 /* Importando Producto*/
+import Producto from './Producto/Producto';
+import ProductoDetails from './Producto/ProductoDetails';
+import AddProducto from './Producto/AddProducto';
+import EditProducto from './Producto/EditProducto';
+
+/* Importando Promocion*/
 import Promocion from './Promociones/Promocion';
 import PromocionDetails from './Promociones/PromocionDetails';
 import AddPromocion from './Promociones/AddPromocion';
 import EditPromocion from './Promociones/EditPromocion';
+
 
 
 const Main = () => (
@@ -38,6 +45,11 @@ const Main = () => (
       <Route exact path='/pedido/add' component={AddPedido} />
       <Route exact path='/pedido/edit/:id' component={EditPedido} />
       <Route exact path='/pedido/:id' component={PedidoDetails} />
+
+      <Route exact path='/producto' component={Producto} />
+      <Route exact path='/producto/add' component={AddProducto} />
+      <Route exact path='/producto/edit/:id' component={EditProducto} />
+      <Route exact path='/producto/:id' component={ProductoDetails} />
 
       <Route exact path='/promocion' component={Promocion} />
       <Route exact path='/promocion/add' component={AddPromocion} />

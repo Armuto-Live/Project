@@ -12,7 +12,7 @@ class PromocionItem extends Component{
   render(){
     return (
       <li className="collection-item">
-        <span><Link to={`/promocion/${this.state.item.id}`}>{this.state.item.tituloPromocion} </Link>CADUCA: {this.state.item.fechaCaducidad}</span>
+        <Link to={`/promocion/${this.state.item.id}`}>{this.state.item.tituloPromocion} </Link><span className="right">CADUCA: {this.state.item.fechaCaducidad}</span>
       </li>
     )
   }
