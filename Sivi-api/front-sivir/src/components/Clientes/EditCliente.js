@@ -69,8 +69,8 @@ class EditCliente extends Component{
     return (
      <div>
         <br />
-       <Link className="btn grey" to="/cliente">Back</Link>
-       <h1>Edit Meetup</h1>
+       <Link className="btn grey" to={`/cliente/${this.state.id}`}>Regresar</Link>
+       <h1>Editar Cliente</h1>
         <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
             <input type="text" name="nombre" ref="nombre" />  

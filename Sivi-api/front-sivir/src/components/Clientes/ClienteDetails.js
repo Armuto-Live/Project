@@ -37,7 +37,7 @@ class ClienteDetails extends Component{
     return (
      <div>
        <br />
-       <Link className="btn grey" to="/cliente">Back</Link>
+       <Link className="btn grey" to="/cliente">Regresar</Link>
        <h1>{this.state.details.apellidoCliente} {this.state.details.nombreCliente}</h1>
        <ul className="collection">
         <li className="collection-item">Direccion: {this.state.details.direccionCliente}</li>

@@ -75,7 +75,7 @@ class EditPedido extends Component{
     return (
      <div>
         <br />
-       <Link className="btn grey" to="/pedido">Back</Link>
+       <Link className="btn grey" to={`/pedido/${this.state.id}`}>Regresar</Link>
        <h1>Editar Pedido</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
        <div className="input-field">

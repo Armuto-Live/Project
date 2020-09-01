@@ -63,7 +63,7 @@ class EditCliente extends Component{
     return (
      <div>
         <br />
-       <Link className="btn grey" to="/promocion">Regresar</Link>
+       <Link className="btn grey" to={`/promocion/${this.state.id}`}>Regresar</Link>
        <h1>Editar Promocion</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">

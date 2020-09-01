@@ -37,7 +37,7 @@ class PedidoDetails extends Component{
     return (
      <div>
        <br />
-       <Link className="btn grey" to="/pedido">Back</Link>
+       <Link className="btn grey" to="/pedido">Regresar</Link>
        <h1>{this.state.details.clientePedido}</h1>
        <ul className="collection">
         <li className="collection-item">Fecha: {this.state.details.fechaPedido}</li>

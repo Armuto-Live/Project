@@ -33,7 +33,7 @@ class AddCliente extends Component{
     return (
      <div>
         <br />
-       <Link className="btn grey" to="/cliente">Back</Link>
+       <Link className="btn grey" to="/cliente">Regresar</Link>
        <h1>Agregar Cliente</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
