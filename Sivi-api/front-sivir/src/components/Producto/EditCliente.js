@@ -69,7 +69,7 @@ class EditCliente extends Component{
     return (
      <div>
         <br />
-       <Link className="btn grey" to="/cliente">Back</Link>
+       <Link className="btn grey" to="/">Back</Link>
        <h1>Edit Meetup</h1>
         <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">

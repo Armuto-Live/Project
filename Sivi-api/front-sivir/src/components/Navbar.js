@@ -12,13 +12,13 @@ class Navbar extends Component{
               <i className="fa fa-bars"></i>
               </a>
             <ul className="right hide-on-small-only">
-              <li><Link to="/">Home</Link></li>         
+              <li><Link to="/home">Home</Link></li>         
             </ul>
             <ul className="side-nav" id="main-menu">
-            <li><Link to="/"><i className="fa fa-plus"></i>CLIENTE</Link></li>  
-            <li><Link to="/cliente/add"><i className="fa fa-plus"></i>PEDIDO(ADD MEETUP)</Link></li>  
-            <li><Link to="/meetups/add"><i className="fa fa-plus"></i> PRODUCTO(ADD MEETUP)</Link></li>
-            <li><Link to="/about"><i className="fa fa-plus"></i> PROMOCION(ABOUT)</Link></li> 
+            <li><Link to="/cliente"><i className="fa fa-plus"></i>CLIENTES</Link></li>  
+            <li><Link to="/pedido"><i className="fa fa-plus"></i>PEDIDOS</Link></li>  
+            <li><Link to="/meetups/add"><i className="fa fa-plus"></i> PRODUCTOS</Link></li>
+            <li><Link to="/promocion"><i className="fa fa-plus"></i> PROMOCIONES</Link></li> 
             </ul>
           </div>
         </nav>

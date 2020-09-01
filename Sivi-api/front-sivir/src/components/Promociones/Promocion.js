@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ClienteItem from './ClienteItem';
+import PromocionItem from './PromocionItem';
 import { Link } from 'react-router-dom';
 
-class Client extends Component{
+class Promocion extends Component{
   constructor(){
     super();
     this.state = {
-      clientes: []
+      promociones: []
     }
   }
 
   componentWillMount(){
-    this.getClientes();
+    this.getPromociones();
   }
   
-  getClientes(){
-    axios.get('http://localhost:3000/api/Clientes')
+  getPromociones(){
+    axios.get('http://localhost:3000/api/Promocions')
       .then(response => {
-        this.setState({clientes: response.data}, () => {
+        this.setState({promociones: response.data}, () => {
           console.log(this.state);
         })
     })
@@ -26,19 +26,19 @@ class Client extends Component{
   }
 
   render(){
-    const clienteItems = this.state.clientes.map((cliente, i) => {
+    const promocionItems = this.state.promociones.map((promocion, i) => {
       return(
-        <ClienteItem key={cliente.id} item={cliente} />
+        <PromocionItem key={promocion.id} item={promocion} />
       )
     })
     return (
       <div>
-        <h1>Clientes</h1>
+        <h1>Promociones</h1>
         <ul className="collection">
-          {clienteItems}
+          {promocionItems}
         </ul>
         <div className="fixed-action-btn">
-      <Link to="/cliente/add" className="btn-floating btn-large red">
+      <Link to="/promocion/add" className="btn-floating btn-large red">
         <i className="fa fa-plus"></i>
       </Link>
     </div>
@@ -47,4 +47,4 @@ class Client extends Component{
   }
 }
 
-export default Client;
+export default Promocion;

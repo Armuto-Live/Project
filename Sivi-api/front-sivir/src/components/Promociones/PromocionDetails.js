@@ -29,7 +29,7 @@ class ClienteDetails extends Component{
     let clienteId = this.state.details.id;
     axios.delete(`http://localhost:3000/api/Clientes/${clienteId}`)
       .then(response => {
-        this.props.history.push('/cliente');
+        this.props.history.push('/');
       }).catch(err => console.log(err));
   }
 
@@ -37,7 +37,7 @@ class ClienteDetails extends Component{
     return (
      <div>
        <br />
-       <Link className="btn grey" to="/cliente">Back</Link>
+       <Link className="btn grey" to="/">Back</Link>
        <h1>{this.state.details.apellidoCliente} {this.state.details.nombreCliente}</h1>
        <ul className="collection">
         <li className="collection-item">Direccion: {this.state.details.direccionCliente}</li>

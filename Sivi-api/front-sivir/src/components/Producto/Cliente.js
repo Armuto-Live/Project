@@ -19,7 +19,7 @@ class Client extends Component{
     axios.get('http://localhost:3000/api/Clientes')
       .then(response => {
         this.setState({clientes: response.data}, () => {
-          console.log(this.state);
+          //console.log(this.state);
         })
     })
     .catch(err => console.log(err));

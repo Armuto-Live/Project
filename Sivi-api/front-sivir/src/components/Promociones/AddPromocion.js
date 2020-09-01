@@ -9,7 +9,7 @@ class AddCliente extends Component{
       url:'http://localhost:3000/api/Clientes',
       data: newCliente
     }).then(response => {
-      this.props.history.push('/cliente');
+      this.props.history.push('/');
     }).catch(err => console.log(err));
 
   }
@@ -33,7 +33,7 @@ class AddCliente extends Component{
     return (
      <div>
         <br />
-       <Link className="btn grey" to="/cliente">Back</Link>
+       <Link className="btn grey" to="/">Back</Link>
        <h1>Agregar Cliente</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
