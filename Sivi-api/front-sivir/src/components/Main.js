@@ -28,8 +28,6 @@ import PromocionDetails from './Promociones/PromocionDetails';
 import AddPromocion from './Promociones/AddPromocion';
 import EditPromocion from './Promociones/EditPromocion';
 
-
-
 const Main = () => (
   <main>
     <Switch>

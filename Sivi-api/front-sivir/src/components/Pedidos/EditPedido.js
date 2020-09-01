@@ -9,6 +9,7 @@ class EditPedido extends Component{
     id: '',
       fechaPedido: '',
       productoPedido: '',
+      tamañoPedido:'',
       telefonoPedido: '',
       direccionPedido:'',
       clientePedido: '',
@@ -32,6 +33,7 @@ class EditPedido extends Component{
         id: response.data.id,
         fechaPedido: response.data.fechaPedido,
         productoPedido: response.data.productoPedido,
+        tamañoPedido: response.data.tamañoPedido,
         telefonoPedido: response.data.telefonoPedido,
         direccionPedido: response.data.direccionPedido,
         clientePedido: response.data.clientePedido,
@@ -60,6 +62,7 @@ class EditPedido extends Component{
     const newPedido = {
       fechaPedido: this.refs.fecha.value,
       productoPedido: this.refs.producto.value,
+      tamañoPedido: this.refs.tamaño.value,
       telefonoPedido: this.refs.telefono.value,
       direccionPedido: this.refs.direccion.value,
       clientePedido: this.refs.cliente.value,
@@ -73,55 +76,60 @@ class EditPedido extends Component{
 
   render(){
     return (
-     <div>
-        <br />
-       <Link className="btn grey" to={`/pedido/${this.state.id}`}>Regresar</Link>
-       <h1>Editar Pedido</h1>
-       <form onSubmit={this.onSubmit.bind(this)}>
-       <div className="input-field">
-            <strong>Fecha: {this.state.fechaPedido}</strong>
-            <input type="date" name="fecha" ref="fecha" />
-          </div>
-          <div className="input-field">
-            <strong>Cliente: {this.state.clientePedido}</strong>
-            <input type="text" name="cliente" ref="cliente" />
-            
-          </div>
-          <div className="input-field">
-            <strong>Direccion: {this.state.direccionPedido}</strong>
-            <input type="text" name="direccion" ref="direccion" />
-            
-          </div>
-          <div className="input-field">
-            <strong>Referencia: {this.state.referenciaPedido}</strong>
-            <input type="text" name="referencia" ref="referencia" />
-            
-          </div>
-          <div className="input-field">
-            <strong >Telefono: {this.state.telefonoPedido}</strong>
-            <input type="number" name="telefono" ref="telefono" />
-            
-          </div>
-          <div className="input-field">
-            <strong>Producto: {this.state.productoPedido}</strong>
-            <input type="text" name="producto" ref="producto" />
-            
-          </div>
-          <div className="input-field">
-            <strong>Pago: {this.state.estadoPago}</strong>
-            <input type="text" name="pago" ref="pago" />
-            
-          </div>
-          <div className="input-field">
-            <label htmlFor="monto">Monto: {this.state.montoTotal}</label>
-            <input type="number" name="monto" ref="monto" />
-            
-          </div>
-          
-          <input type="submit" value="Save" className="btn" />
-        </form>
+  <div>
+    <br />
+   <Link className="btn grey" to={`/pedido/${this.state.id}`}>Regresar</Link>
+   <h1>Editar Pedido</h1>
+   <form onSubmit={this.onSubmit.bind(this)}>
+      <div className="input-field">
+        <strong>Fecha: {this.state.fechaPedido}</strong>
+        <input type="date" name="fecha" ref="fecha" />
       </div>
-    )
+      <div className="input-field">
+        <strong>Cliente: {this.state.clientePedido}</strong>
+        <input type="text" name="cliente" ref="cliente" />
+        
+      </div>
+      <div className="input-field">
+        <strong>Direccion: {this.state.direccionPedido}</strong>
+        <input type="text" name="direccion" ref="direccion" />
+        
+      </div>
+      <div className="input-field">
+        <strong>Referencia: {this.state.referenciaPedido}</strong>
+        <input type="text" name="referencia" ref="referencia" />
+        
+      </div>
+      <div className="input-field">
+        <strong >Telefono: {this.state.telefonoPedido}</strong>
+        <input type="number" name="telefono" ref="telefono" />
+        
+      </div>
+      <div className="input-field">
+        <strong>Producto: {this.state.productoPedido}</strong>
+        <input type="text" name="producto" ref="producto" />
+        
+      </div>
+      <div className="input-field">
+        <strong>Tamaño: {this.state.tamañoPedido}</strong>
+        <input type="text" name="tamaño" ref="tamaño" />
+        
+      </div>
+      <div className="input-field">
+        <strong>Pago: {this.state.estadoPago}</strong>
+        <input type="text" name="pago" ref="pago" />
+        
+      </div>
+      <div className="input-field">
+        <label htmlFor="monto">Monto: {this.state.montoTotal}</label>
+        <input type="number" name="monto" ref="monto" />
+        
+      </div>
+      
+      <input type="submit" value="Save" className="btn" />
+    </form>
+  </div>
+    ) 
   }
 }
 

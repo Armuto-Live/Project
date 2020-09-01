@@ -12,7 +12,9 @@ class PedidoItem extends Component{
   render(){
     return (
       <li className="collection-item">
-        <Link to={`/pedido/${this.state.item.id}`}>{this.state.item.clientePedido} </Link> <span className="right">FECHA: {this.state.item.fechaPedido}</span>
+        <Link to={`/pedido/${this.state.item.id}`}>{this.state.item.clientePedido} </Link> 
+        <span className="right">---FECHA: {this.state.item.fechaPedido}</span>
+        <strong className="right">{this.state.item.estadoPago.toUpperCase()}</strong> 
       </li>
     )
   }
