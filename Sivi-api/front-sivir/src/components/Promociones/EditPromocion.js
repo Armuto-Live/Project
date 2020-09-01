@@ -7,33 +7,29 @@ class EditCliente extends Component{
     super(props);
     this.state = {
     id: '',
-    nombreCliente: '',
-    apellidoCliente: '',
-    telefonoCliente: '',
-    direccionCliente: '',
-    dniCliente: '',
-    referenciaCliente: '',
+    tituloPromocion: '',
+    descripcionPromocion: '',
+    fechaInicio: '',
+    fechaCaducidad: ''
      
     }
 
   }
   
   componentWillMount(){
-    this.getClienteDetails();
+    this.getPromocionDetails();
   }
 
-  getClienteDetails(){
-    let clienteId = this.props.match.params.id;
-    axios.get(`http://localhost:3000/api/Clientes/${clienteId}`)
+  getPromocionDetails(){
+    let promocionId = this.props.match.params.id;
+    axios.get(`http://localhost:3000/api/Promocions/${promocionId}`)
     .then(response => {
       this.setState({
         id: response.data.id,
-        nombreCliente:   response.data.nombreCliente,
-        apellidoCliente: response.data.apellidoCliente,
-        telefonoCliente: response.data.telefonoCliente,
-        direccionCliente: response.data.direccionCliente,
-        dniCliente: response.data.dniCliente,
-        referenciaCliente:response.data.referenciaCliente
+        tituloPromocion:   response.data.tituloPromocion,
+        descripcionPromocion: response.data.descripcionPromocion,
+        fechaInicio: response.data.fechaInicio,
+        fechaCaducidad: response.data.fechaCaducidad
       }, () => {
         console.log(this.state);
       });
@@ -41,27 +37,25 @@ class EditCliente extends Component{
     .catch(err => console.log(err));
     }
 
-  editCliente(newCliente){
+  editPromocion(newPromocion){
     axios.request({
       method:'put',
-      url:`http://localhost:3000/api/Clientes/${this.state.id}`,
-      data: newCliente
+      url:`http://localhost:3000/api/Promocions/${this.state.id}`,
+      data: newPromocion
     }).then(response => {
-      this.props.history.push('/');
+      this.props.history.push('/promocion');
     }).catch(err => console.log(err));
 
   }
 
   onSubmit(e){
-    const newCliente = {
-      nombreCliente: this.refs.nombre.value,
-      apellidoCliente: this.refs.apellido.value,
-      telefonoCliente: this.refs.telefono.value,
-      direccionCliente: this.refs.direccion.value,
-      dniCliente: this.refs.dni.value,
-      referenciaCliente: this.refs.referencia.value
+    const newPromocion = {
+      tituloPromocion: this.refs.titulo.value,
+      descripcionPromocion: this.refs.descripcion.value,
+      fechaInicio: this.refs.inicio.value,
+      fechaCaducidad: this.refs.caducidad.value
     }
-    this.editCliente(newCliente);
+    this.editPromocion(newPromocion);
     e.preventDefault();
   }
 
@@ -69,32 +63,24 @@ class EditCliente extends Component{
     return (
      <div>
         <br />
-       <Link className="btn grey" to="/">Back</Link>
-       <h1>Edit Meetup</h1>
-        <form onSubmit={this.onSubmit.bind(this)}>
+       <Link className="btn grey" to="/promocion">Regresar</Link>
+       <h1>Editar Promocion</h1>
+       <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
-            <input type="text" name="nombre" ref="nombre" />  
-            <label htmlFor="nombre">Nombres: {this.state.nombreCliente}</label>
+            <input type="text" name="titulo" ref="titulo" />
+            <label htmlFor="titulo">Titulo: {this.state.tituloPromocion}</label>
           </div>
           <div className="input-field">
-            <input type="text" name="apellido" ref="apellido" /> 
-            <label htmlFor="apellido">Apellidos: {this.state.apellidoCliente}</label>
+            <input type="text" name="descripcion" ref="descripcion" />
+            <label htmlFor="descripcion">Descripcion: {this.state.descripcionPromocion}</label>
           </div>
           <div className="input-field">
-            <input type="number" name="telefono" ref="telefono" />  
-            <label htmlFor="telefono">Telefono: {this.state.telefonoCliente} </label>
+            <strong>Fecha Inicio: {this.state.fechaInicio}</strong>
+            <input type="date" name="inicio" ref="inicio" />
           </div>
           <div className="input-field">
-            <input type="text" name="direccion" ref="direccion" /> 
-            <label htmlFor="direccion">Direccion: {this.state.direccionCliente}</label>
-          </div>
-          <div className="input-field">
-            <input type="number" name="dni" ref="dni"/> 
-            <label htmlFor="dni">DNI: {this.state.dniCliente}</label>
-          </div>
-          <div className="input-field">
-            <input type="text" name="referencia" ref="referencia" />  
-            <label htmlFor="referencia">Referencia: {this.state.referenciaCliente}</label>
+            <strong>Fecha Fin: {this.state.fechaCaducidad}</strong>
+            <input type="date" name="caducidad" ref="caducidad" />
           </div>
           <input type="submit" value="Save" className="btn" />
         </form>

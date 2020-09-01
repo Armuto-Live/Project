@@ -2,30 +2,26 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-class AddCliente extends Component{
-  addCliente(newCliente){
+class PromocionCliente extends Component{
+  addPromocion(newPromocion){
     axios.request({
       method:'post',
-      url:'http://localhost:3000/api/Clientes',
-      data: newCliente
+      url:'http://localhost:3000/api/Promocions',
+      data: newPromocion
     }).then(response => {
-      this.props.history.push('/');
+      this.props.history.push('/promocion');
     }).catch(err => console.log(err));
 
   }
 
   onSubmit(e){
-    console.log(this.refs.nombre.value);
-    const newCliente = {
-      nombreCliente: this.refs.nombre.value,
-      apellidoCliente: this.refs.apellido.value,
-      telefonoCliente: this.refs.telefono.value,
-      direccionCliente: this.refs.direccion.value,
-      dniCliente: this.refs.dni.value,
-      referenciaCliente: this.refs.referencia.value
-      
+    const newPromocion = {
+      tituloPromocion: this.refs.titulo.value,
+      descripcionPromocion: this.refs.descripcion.value,
+      fechaInicio: this.refs.inicio.value,
+      fechaCaducidad: this.refs.caducidad.value      
     }
-    this.addCliente(newCliente);
+    this.addPromocion(newPromocion);
     e.preventDefault();
   }
 
@@ -33,32 +29,24 @@ class AddCliente extends Component{
     return (
      <div>
         <br />
-       <Link className="btn grey" to="/">Back</Link>
-       <h1>Agregar Cliente</h1>
+       <Link className="btn grey" to="/">Regresar</Link>
+       <h1>Agregar Promocion</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
-            <input type="text" name="nombre" ref="nombre" />
-            <label htmlFor="nombre">Nombres</label>
+            <input type="text" name="titulo" ref="titulo" />
+            <label htmlFor="titulo">Titulo</label>
           </div>
           <div className="input-field">
-            <input type="text" name="apellido" ref="apellido" />
-            <label htmlFor="apellido">Apellidos</label>
+            <input type="text" name="descripcion" ref="descripcion" />
+            <label htmlFor="descripcion">Descripcion</label>
           </div>
           <div className="input-field">
-            <input type="number" name="telefono" ref="telefono" />
-            <label htmlFor="telefono">Telefono</label>
+            <strong>Fecha Inicio</strong>
+            <input type="date" name="inicio" ref="inicio" />
           </div>
           <div className="input-field">
-            <input type="text" name="direccion" ref="direccion" />
-            <label htmlFor="direccion">Direccion</label>
-          </div>
-          <div className="input-field">
-            <input type="number" name="dni" ref="dni" />
-            <label htmlFor="dni">DNI</label>
-          </div>
-          <div className="input-field">
-            <input type="text" name="referencia" ref="referencia" />
-            <label htmlFor="referencia">Referencia</label>
+            <strong>Fecha Fin</strong>
+            <input type="date" name="caducidad" ref="caducidad" />
           </div>
           <input type="submit" value="Save" className="btn" />
         </form>
@@ -67,4 +55,4 @@ class AddCliente extends Component{
   }
 }
 
-export default AddCliente;
+export default PromocionCliente;

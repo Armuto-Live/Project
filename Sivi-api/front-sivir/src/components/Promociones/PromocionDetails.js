@@ -11,12 +11,12 @@ class ClienteDetails extends Component{
   }
 
   componentWillMount(){
-    this.getCliente();
+    this.getPromocion();
   }
 
-  getCliente(){
-    let clienteId = this.props.match.params.id;
-    axios.get(`http://localhost:3000/api/Clientes/${clienteId}`)
+  getPromocion(){
+    let promocionId = this.props.match.params.id;
+    axios.get(`http://localhost:3000/api/Promocions/${promocionId}`)
     .then(response => {
       this.setState({details: response.data}, () => {
         console.log(this.state);
@@ -26,10 +26,10 @@ class ClienteDetails extends Component{
   }
 
   onDelete(){
-    let clienteId = this.state.details.id;
-    axios.delete(`http://localhost:3000/api/Clientes/${clienteId}`)
+    let promocionId = this.state.details.id;
+    axios.delete(`http://localhost:3000/api/Promocions/${promocionId}`)
       .then(response => {
-        this.props.history.push('/');
+        this.props.history.push('/promocion');
       }).catch(err => console.log(err));
   }
 
@@ -37,15 +37,14 @@ class ClienteDetails extends Component{
     return (
      <div>
        <br />
-       <Link className="btn grey" to="/">Back</Link>
-       <h1>{this.state.details.apellidoCliente} {this.state.details.nombreCliente}</h1>
+       <Link className="btn grey" to="/promocion">Regresar</Link>
+       <h1>{this.state.details.tituloPromocion}</h1>
        <ul className="collection">
-        <li className="collection-item">Direccion: {this.state.details.direccionCliente}</li>
-        <li className="collection-item">Referencia: {this.state.details.referenciaCliente}</li>
-        <li className="collection-item">Telefono:: {this.state.details.telefonoCliente}</li>
-        <li className="collection-item">DNI: {this.state.details.dniCliente}</li>
+        <li className="collection-item">Descripcion: {this.state.details.descripcionPromocion}</li>
+        <li className="collection-item">Fecha de Inicio: {this.state.details.fechaInicio}</li>
+        <li className="collection-item">Fecha de Caducidad: {this.state.details.fechaCaducidad}</li>
         </ul>
-        <Link className="btn" to={`/cliente/edit/${this.state.details.id}`}> Edit</Link>
+        <Link className="btn" to={`/promocion/edit/${this.state.details.id}`}> Edit</Link>
 
         <button onClick={this.onDelete.bind(this)} className="btn red right">Delete</button>
       </div>

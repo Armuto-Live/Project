@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-class ClienteItem extends Component{
+class PromocionItem extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -12,10 +12,10 @@ class ClienteItem extends Component{
   render(){
     return (
       <li className="collection-item">
-        <Link to={`/cliente/${this.state.item.id}`}>{this.state.item.apellidoCliente} {this.state.item.nombreCliente}</Link>
+        <span><Link to={`/promocion/${this.state.item.id}`}>{this.state.item.tituloPromocion} </Link>CADUCA: {this.state.item.fechaCaducidad}</span>
       </li>
     )
   }
 }
 
-export default ClienteItem;
+export default PromocionItem;
