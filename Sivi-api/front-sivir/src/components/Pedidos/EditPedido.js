@@ -83,32 +83,39 @@ class EditPedido extends Component{
             <input type="date" name="fecha" ref="fecha" />
           </div>
           <div className="input-field">
+            <strong>Cliente: {this.state.clientePedido}</strong>
             <input type="text" name="cliente" ref="cliente" />
-            <label htmlFor="cliente">Cliente: {this.state.clientePedido}</label>
+            
           </div>
           <div className="input-field">
+            <strong>Direccion: {this.state.direccionPedido}</strong>
             <input type="text" name="direccion" ref="direccion" />
-            <label htmlFor="direccion">Direccion: {this.state.direccionPedido}</label>
+            
           </div>
           <div className="input-field">
+            <strong>Referencia: {this.state.referenciaPedido}</strong>
             <input type="text" name="referencia" ref="referencia" />
-            <label htmlFor="referencia">Referencia: {this.state.referenciaPedido}</label>
+            
           </div>
           <div className="input-field">
+            <strong >Telefono: {this.state.telefonoPedido}</strong>
             <input type="number" name="telefono" ref="telefono" />
-            <label htmlFor="telefono">Telefono: {this.state.telefonoPedido}</label>
+            
           </div>
           <div className="input-field">
+            <strong>Producto: {this.state.productoPedido}</strong>
             <input type="text" name="producto" ref="producto" />
-            <label htmlFor="producto">Producto: {this.state.productoPedido}</label>
+            
           </div>
           <div className="input-field">
+            <strong>Pago: {this.state.estadoPago}</strong>
             <input type="text" name="pago" ref="pago" />
-            <label htmlFor="pago">Pago: {this.state.estadoPago}</label>
+            
           </div>
           <div className="input-field">
-            <input type="number" name="monto" ref="monto" />
             <label htmlFor="monto">Monto: {this.state.montoTotal}</label>
+            <input type="number" name="monto" ref="monto" />
+            
           </div>
           
           <input type="submit" value="Save" className="btn" />

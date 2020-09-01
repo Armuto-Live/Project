@@ -66,20 +66,24 @@ class EditProducto extends Component{
        <h1>Editar Producto</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
+            <strong>Nombre: {this.state.nombreProducto}</strong>
             <input type="text" name="nombre" ref="nombre" />
-            <label htmlFor="nombre">Nombre: {this.state.nombreProducto}</label>
+            
           </div>
-          <div className="input-field">
+            <div className="input-field">
+            <strong>Tamaño: {this.state.tamañoProducto}</strong>
             <input type="text" name="tamaño" ref="tamaño" />
-            <label htmlFor="tamaño">Tamaño: {this.state.tamañoProducto}</label>
+            
           </div>
           <div className="input-field">
+            <strong>Descripcion: {this.state.descripcionProducto}</strong>
             <input type="text" name="descripcion" ref="descripcion" />
-            <label htmlFor="descripcion">Descripcion: {this.state.descripcionProducto}</label>
+            
           </div>
           <div className="input-field">
+            <strong htmlFor="precio">Precio: {this.state.precioProducto}</strong>
             <input type="number" name="precio" ref="precio" />
-            <label htmlFor="precio">Precio: {this.state.precioProducto}</label>
+            
           </div>
           <input type="submit" value="Save" className="btn" />
         </form>

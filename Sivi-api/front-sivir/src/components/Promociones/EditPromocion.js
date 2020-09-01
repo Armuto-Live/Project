@@ -59,6 +59,8 @@ class EditCliente extends Component{
     e.preventDefault();
   }
 
+
+
   render(){
     return (
      <div>
@@ -67,12 +69,14 @@ class EditCliente extends Component{
        <h1>Editar Promocion</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
-            <input type="text" name="titulo" ref="titulo" />
-            <label htmlFor="titulo">Titulo: {this.state.tituloPromocion}</label>
+            <strong>Titulo: {this.state.tituloPromocion}</strong>
+            <input type="text" name="titulo" ref="titulo"/>
+            
           </div>
           <div className="input-field">
+            <strong>Descripcion: {this.state.descripcionPromocion}</strong>
             <input type="text" name="descripcion" ref="descripcion" />
-            <label htmlFor="descripcion">Descripcion: {this.state.descripcionPromocion}</label>
+
           </div>
           <div className="input-field">
             <strong>Fecha Inicio: {this.state.fechaInicio}</strong>

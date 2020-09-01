@@ -73,28 +73,34 @@ class EditCliente extends Component{
        <h1>Editar Cliente</h1>
         <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
+            <strong >Nombres: {this.state.nombreCliente}</strong>
             <input type="text" name="nombre" ref="nombre" />  
-            <label htmlFor="nombre">Nombres: {this.state.nombreCliente}</label>
+            
           </div>
           <div className="input-field">
+            <strong>Apellidos: {this.state.apellidoCliente}</strong>
             <input type="text" name="apellido" ref="apellido" /> 
-            <label htmlFor="apellido">Apellidos: {this.state.apellidoCliente}</label>
+            
           </div>
           <div className="input-field">
+            <strong >Telefono: {this.state.telefonoCliente} </strong>
             <input type="number" name="telefono" ref="telefono" />  
-            <label htmlFor="telefono">Telefono: {this.state.telefonoCliente} </label>
+            
           </div>
           <div className="input-field">
+            <strong >Direccion: {this.state.direccionCliente}</strong>
             <input type="text" name="direccion" ref="direccion" /> 
-            <label htmlFor="direccion">Direccion: {this.state.direccionCliente}</label>
+            
           </div>
           <div className="input-field">
+            <strong >DNI: {this.state.dniCliente}</strong>
             <input type="number" name="dni" ref="dni"/> 
-            <label htmlFor="dni">DNI: {this.state.dniCliente}</label>
+            
           </div>
           <div className="input-field">
+            <strong >Referencia: {this.state.referenciaCliente}</strong>
             <input type="text" name="referencia" ref="referencia" />  
-            <label htmlFor="referencia">Referencia: {this.state.referenciaCliente}</label>
+            
           </div>
           <input type="submit" value="Save" className="btn" />
         </form>
